@@ -36,6 +36,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
     font-size: 30px;
     font-weight: 600;
 }
@@ -92,10 +93,36 @@ footer {
 }
 
 
+/* второй грид контейнер*/
 .grid-container-two {
     display: grid;
     user-select: none;
-    height: 500px;
-    grid-template-columns: 50px 100px 50px;
-    grid-template-rows: 50px 100px 50px;
+    padding: 20px;
+    width: 1000px;
+    height: 1000px;
+    border: 2px dotted blue;
+    grid-template-columns: 100px 200px 300px;
+    column-gap: 20px;
+    grid-template-rows: 100px 200px 300px;
+    row-gap: 20px;
+
+    justify-items: stretch;
+    /* думаю что по дефолту лучше оставлять stretch (подгонятет под размеры колонн и строк), то же самое, что и align-items у flex-ов */
+    align-items: stretch;
+    /* по поводу align-items могу сказать то же самое */
+    justify-content: center;
+    /* всё как во flex-ах, за исключением того, что stretch прижимает к левому краю */
+    align-content: space-between;
+    /* то же самое, что и justify-content у flex-ов */
 }
+
+.item-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 600;
+    background-color: blue;
+    color: white;
+}
+
