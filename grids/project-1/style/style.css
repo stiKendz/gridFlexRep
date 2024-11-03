@@ -93,13 +93,13 @@ footer {
 }
 
 
-/* второй грид контейнер*/
+/* второй грид контейнер */
 .grid-container-two {
+    width: 1000px;
+    height: 1000px;
     display: grid;
     user-select: none;
     padding: 20px;
-    width: 1000px;
-    height: 1000px;
     border: 2px dotted blue;
     grid-template-columns: 100px 200px 300px;
     column-gap: 20px;
@@ -126,3 +126,61 @@ footer {
     color: white;
 }
 
+
+
+/* третий грид контейнер */
+
+.grid-container-three {
+    width: 1000px;
+    height: 1000px;
+    display: grid;
+
+    /* вариант 1 */
+    /* grid-template-columns: repeat(3, 100px);
+    column-gap: 50px;
+    grid-template-rows: repeat(4, 100px);
+    row-gap: 50px; */
+
+    /* вариант 2 */
+    gap: 20px;
+
+    justify-items: stretch;
+    justify-content: center;
+    align-content: start;
+
+    /* не ставить запятые после строк, иначе всё сломается !!! */
+    grid-template-areas:
+    "E F F"
+    "E F F"
+    "E G G"
+    "E G G" ;
+}
+
+.item-three {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    background-color: green;
+    color: white;
+
+    /* вариант 2 */
+    padding: 50px;
+}
+
+.item-e {
+    grid-area: E;
+}
+
+.item-f {
+    grid-area: F;
+}
+
+.item-g {
+    grid-area: G;
+}
+
+/* ВАЖНО, а то я, чайник, могу забыть */
+/* если использовать justify-items, align-items задавая размеры колоннам и строкам, но НЕ задавая дочерним элементам паддинг 
+или размеры (width, height), то эти св-ва будут сжимать элементы, в случае если заданы start, center или end */
+/* ВАЖНО, а то я, чайник, могу забыть */
