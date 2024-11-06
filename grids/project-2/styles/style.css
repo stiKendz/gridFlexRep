@@ -1,11 +1,11 @@
-body {
+html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
     box-sizing: border-box;
 
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     width: 100vw;
     min-height: 100vh;
@@ -13,12 +13,19 @@ body {
     font-family: "itim";
 }
 
+@font-face {
+    font-family: "Itim";
+    src: url(../fonts/Itim-Regular.ttf);
+}
+
 h1,
 h2,
 h3 {
-    font-weight: 500;
     margin: 0;
     padding: 0;
+
+    font-weight: 500;
+    font-family: "itim";
 }
 
 header {
@@ -119,15 +126,11 @@ header {
     flex-wrap: wrap;
 }
 
-@font-face {
-    font-family: "Itim";
-    src: url(../fonts/Itim-Regular.ttf);
-}
-
 .training-grid-container {
     display: grid;
     grid-template-rows: repeat(6, 100px);
     grid-template-columns: repeat(10, 100px);
+    margin-top: 20px;
     margin-bottom: 100px;
 
     font-weight: 500;
@@ -293,13 +296,14 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
-    width: 100vw;
-    height: 550px;
+    width: 100%;
+    height: 500px;
     gap: 50px 0px;
 
     background-color: #CCDDBB;
+    font-family: "itim";
 }
 
 .contacts-icons-container {
@@ -433,6 +437,13 @@ footer {
 
     outline: none;
 }
+.subscribe-input:focus {
+    border: 1px solid black;
+    margin: -1px;
+}
+.subscribe-input::placeholder {
+    font-family: "itim";
+}
 
 .telegram-button {
     display: flex;
@@ -442,12 +453,25 @@ footer {
     margin: 0;
     border: 0;
     height: 40px;
-    padding-left: 5px;
-    padding-right: 5px;
     
     background-color: #C7D8DB;
 
+    font-family: "itim";
+    
     user-select: none;
     cursor: pointer;
     outline: none;
 }
+.telegram-button:active {
+    transform: scale(0.8);
+    transition: 0.1s;
+
+}
+
+.telegram-image {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
