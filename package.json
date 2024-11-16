@@ -1,0 +1,16 @@
+{
+  "name": "gridflexrep",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "translate": "sass -w ./grids/project-2/styles/media.scss ./grids/project-2/styles/output.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "sass": "^1.81.0",
+    "scss": "^0.2.4"
+  }
+}
