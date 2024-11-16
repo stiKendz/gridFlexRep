@@ -1,0 +1,218 @@
+$mainFontSize: 24px;
+$mainColor: #313743;
+$mainColorTwo: #2F323E;
+$mainFontFamily: Heebo;
+$afterFontFamily: ItimafterFontFamily;
+
+@mixin mpZero {
+    margin: 0px;
+    padding: 0px;
+}
+
+@mixin flexCenterContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin baseButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 5px 20px;
+    border: 0;
+    border-radius: 4px;
+
+    color: black;
+    box-shadow: 0px 2px 2px 0px black;
+
+    font-size: $mainFontSize - 4px;
+    font-weight: 500;
+
+    user-select: none;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+
+        transition: 0.4s ease-out;
+    }
+}
+
+@font-face {
+    font-family: Heebo;
+    src: url(../fonts/Heebo-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/RobotoMono-VariableFont_wght.ttf);
+}
+
+/* позиционируем с помощью grid header в самом верху, main() посередине и footer снизу  */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-block-size: 100dvh; /* для main, что бы растянуть на весь экран и динамически адаптировать под экраны телефонов*/
+    margin: 0;
+
+    background-color: $mainColor;
+    font-family: "Heebo";
+}
+
+header {
+    position: sticky;
+
+    @include mpZero;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: $mainFontSize;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+
+    color: #4D5468;
+}
+
+.main-container {
+    display: block;
+    min-block-size: 100dvh;
+    background-color: $mainColorTwo;
+}
+
+.pre-grid-container {
+    margin: 0;
+    padding: 20px;
+    height: 100%;
+}
+
+.offer-message {
+    @include flexCenterContainer;
+    width: 100%;
+    margin: 0;
+    padding: 5px 0px;
+
+    background-color: #777A52;
+}
+
+.ticket-container {
+    display: grid;
+    justify-content: center;
+    margin-top: 20px;
+    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: 400px 400px 400px;
+    grid-template-areas: 
+    "A A B"
+    "A A C"
+    "A A D";
+    grid-gap: 20px 20px;
+
+    .ticket-item {
+        background-color: #414758;
+
+        &.long-item {
+            grid-area: A;
+
+            .products-list {
+                display: flex;
+                flex-direction: column;
+                padding-top: 20px;
+                width: 100%;
+                
+                .product {
+                    display: inline-flex;
+                    justify-content: space-between;
+                    padding: 5px 20px 5px 20px;
+                    // border-top: 10px dotted #414758;
+                    border-top: 2px dotted #5C527A;
+
+                    font-size: $mainFontSize + 4;
+
+                    color: white;
+
+                    .product-name {
+                        font-family: $mainFontFamily;
+
+                        letter-spacing: 0.5px;
+                    }
+                    .product-price {
+                        font-family: $mainFontFamily;
+
+                        letter-spacing: 0.5px;
+                    }
+                }
+            }
+        }
+        &.small-item.b {
+            grid-area: B;
+
+            background-color: #5C527A;
+
+            .items {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 100%;
+                padding: 0px 20px;
+
+                font-size: $mainFontSize - 4;
+
+                color: white;
+            }
+        }
+        &.small-item.c {
+            grid-area: C;
+
+            @include flexCenterContainer;
+
+            background-color: #537B70;
+
+            .checkout-button {
+                @include baseButton;     
+                
+                background-color: #5ABA9F;
+            }
+        }
+        &.small-item.d {
+            grid-area: D;
+
+            @include flexCenterContainer;
+
+            background-color: #7A5D53;
+
+            .need-help-button {
+                @include baseButton;
+
+                background-color: #ad8374;
+            }
+        }
+    }
+}
+
+footer {
+    @include mpZero;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: $mainFontSize;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+
+    color: #4D5468;
+}

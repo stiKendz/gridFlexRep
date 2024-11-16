@@ -1,0 +1,190 @@
+@charset "UTF-8";
+@font-face {
+  font-family: Heebo;
+  src: url(../fonts/Heebo-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/RobotoMono-VariableFont_wght.ttf);
+}
+/* позиционируем с помощью grid header в самом верху, main() посередине и footer снизу  */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-block-size: 100dvh; /* для main, что бы растянуть на весь экран и динамически адаптировать под экраны телефонов*/
+  margin: 0;
+  background-color: #313743;
+  font-family: "Heebo";
+}
+
+header {
+  position: sticky;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #4D5468;
+}
+
+.main-container {
+  display: block;
+  min-block-size: 100dvh;
+  background-color: #2F323E;
+}
+
+.pre-grid-container {
+  margin: 0;
+  padding: 20px;
+  height: 100%;
+}
+
+.offer-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 5px 0px;
+  background-color: #777A52;
+}
+
+.ticket-container {
+  display: grid;
+  justify-content: center;
+  margin-top: 20px;
+  grid-template-rows: repeat(3, 100px);
+  grid-template-columns: 400px 400px 400px;
+  grid-template-areas: "A A B" "A A C" "A A D";
+  grid-gap: 20px 20px;
+}
+.ticket-container .ticket-item {
+  background-color: #414758;
+}
+.ticket-container .ticket-item.long-item {
+  grid-area: A;
+}
+.ticket-container .ticket-item.long-item .products-list {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  width: 100%;
+}
+.ticket-container .ticket-item.long-item .products-list .product {
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 5px 20px 5px 20px;
+  border-top: 2px dotted #5C527A;
+  font-size: 28px;
+  color: white;
+}
+.ticket-container .ticket-item.long-item .products-list .product .product-name {
+  font-family: Heebo;
+  letter-spacing: 0.5px;
+}
+.ticket-container .ticket-item.long-item .products-list .product .product-price {
+  font-family: Heebo;
+  letter-spacing: 0.5px;
+}
+.ticket-container .ticket-item.small-item.b {
+  grid-area: B;
+  background-color: #5C527A;
+}
+.ticket-container .ticket-item.small-item.b .items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0px 20px;
+  font-size: 20px;
+  color: white;
+}
+.ticket-container .ticket-item.small-item.c {
+  grid-area: C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #537B70;
+}
+.ticket-container .ticket-item.small-item.c .checkout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 5px 20px;
+  border: 0;
+  border-radius: 4px;
+  color: black;
+  box-shadow: 0px 2px 2px 0px black;
+  font-size: 20px;
+  font-weight: 500;
+  user-select: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #5ABA9F;
+}
+.ticket-container .ticket-item.small-item.c .checkout-button:hover {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: 0.4s ease-out;
+}
+.ticket-container .ticket-item.small-item.d {
+  grid-area: D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7A5D53;
+}
+.ticket-container .ticket-item.small-item.d .need-help-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 5px 20px;
+  border: 0;
+  border-radius: 4px;
+  color: black;
+  box-shadow: 0px 2px 2px 0px black;
+  font-size: 20px;
+  font-weight: 500;
+  user-select: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #ad8374;
+}
+.ticket-container .ticket-item.small-item.d .need-help-button:hover {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: 0.4s ease-out;
+}
+
+footer {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #4D5468;
+}
+
+/*# sourceMappingURL=style.css.map */
