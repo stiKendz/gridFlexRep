@@ -1,9 +1,16 @@
+/* div {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+} */
+/* порядок вендорных префиксов */
+
 html, 
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
     box-sizing: border-box;
 
     margin: 0;
@@ -16,6 +23,10 @@ body {
     /* свойство, которое помогло убрать полосу прокрутки но от этого проблема не сильно изменилась */
     /* overflow-x: hidden; */
     /* overflow-y: scroll; */
+
+    @media  screen and (max-width: 860px) {
+        
+    }
 }
 
 @font-face {
@@ -41,9 +52,9 @@ header {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin: 0;
-    padding: 0;
+    padding: 0px 50px 0px 50px;
     width: 100%;
     height: 100px;
 
@@ -51,33 +62,40 @@ header {
 }
 
 .logo-png-container{
+    position: absolute;
+    left: 0;
+
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 100px;
-    height: 100px;
-    margin-left: 200px;
+    margin: 0;
+    padding: 0;
+    height: 100%;
     gap: 0px 10px;
 }
 
 .logo-icon {
-    width: 90px;
-    height: 90px;
+    max-width: 90px;
+    max-height: 90px;
 }
 
 .company-name {
-    width: 220px;
     margin: 0;
-    padding: 0;
+    padding: 10px;
 
     white-space: nowrap;
 }
 
 .navigation {
-    display: flex;
-    gap: 0px 35px;
+    position: absolute;
+    right: 0;
 
-    margin-right: 200px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 0px 35px;
+    height: 100%;
 }
 
 .nav-item {
